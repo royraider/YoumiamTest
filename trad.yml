@@ -1,0 +1,29 @@
+---
+allergy:
+ ? "1"
+ :
+   name: lactose
+ ? "2"
+ :
+   name: egg
+ ? "3"
+ :
+   name: gluten
+ ? "4"
+ :
+   name: sesame
+ ? "5"
+ :
+   name: crustaceans
+ ? "6"
+ :
+   name: peanut
+ ? "7"
+ :
+   name: soy
+ ? "8"
+ :
+   name: nuts
+ ? "9"
+ :
+   name: fish
