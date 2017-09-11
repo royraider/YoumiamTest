@@ -3,7 +3,7 @@ Ceci est un simple test ayant pour but de valider des acquis sur le framework Sy
 
 Aucune importance ne sera accordée au rendu visuel.
 
-Nous serons avant tout attentif aux performances, à la scalabilité et la propreté du code propose.
+Nous serons avant tout attentif aux performances, à la scalabilité et à la propreté du code proposé.
 
 
 Good luck and Have fun ! :)
