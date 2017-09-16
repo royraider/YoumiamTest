@@ -23,8 +23,16 @@ class DefaultController extends Controller
     {
         $count = count($this->getDoctrine()->getRepository(Friends::class)
         ->findByFollowing($id));
-        $data = $this->get('app.article_service')->getAllArticlesWithDetail();
         return $this->render('base.html.twig', ['count' => $count]);
+    }
+
+    /**
+     * @Route("/", name="homepage")
+     */
+    public function indexAction()
+    {
+        $data = $this->get('app.article_service')->getAllArticlesWithDetail();
+        return $this->render('default/home.html.twig', ['datas' => $data]);
     }
 
     /**

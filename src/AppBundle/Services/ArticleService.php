@@ -29,6 +29,8 @@ class ArticleService
         foreach ($queryResults as $queryResult) {
             if (!array_key_exists($queryResult['id'], $data)) {
                 $data[$queryResult['id']] = [
+                    'title' => $queryResult['title'],
+                    'content' => $queryResult['content'],
                     'comments' => [],
                     'last_friend' => $queryResult['name'],
                     'count' => $queryResult['friends_count'],

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% for data in datas %}
+        <h3>{{ data.title }}</h3>
+        <p>{{ data.content }}</p>
+        {% for comments in data.comments %}
+            {{ loop.index }}. {{ comments }}<br />
+        {% endfor %}
+        <br />
+        <div>{{ data.last_friend }}</div>
+        <div>{{ data.count }}</div>
+        <hr>
+    {% endfor %}
+{% endblock %}
