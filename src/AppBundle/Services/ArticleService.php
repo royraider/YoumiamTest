@@ -24,16 +24,34 @@ class ArticleService
 
     public function getAllArticlesWithDetail()
     {
-        $queryResult = $this->retrieveAllArticlesInformation();
+        $queryResults = $this->retrieveAllArticlesInformation();
+        $data = [];
+        foreach ($queryResults as $queryResult) {
+            if (!array_key_exists($queryResult['id'], $data)) {
+                $data[$queryResult['id']] = [
+                    'comments' => [],
+                    'last_friend' => $queryResult['name'],
+                    'count' => $queryResult['friends_count'],
+                ];
+            }
+            if (count($data[$queryResult['id']]['comments']) < 3) {
+                $data[$queryResult['id']]['comments'][] = $queryResult['comment'];
+            }
+        }
+        return $data;
     }
 
     private function retrieveAllArticlesInformation()
     {
         $queryBuilder = $this->entityManager->createQueryBuilder();
-        $queryBuilder->select('a.title')
-            ->addSelect('a.content')
-            ->addSelect('c.comment')
-            ->addSelect('u.name')
+        $queryBuilder->select('a.id as id')
+            ->addSelect('a.title as title')
+            ->addSelect('a.content as content')
+            ->addSelect('c.comment as comment')
+            ->addSelect('u.name as name')
+            ->addSelect('(SELECT COUNT(co.userId) FROM AppBundle:Articles as ar
+            INNER JOIN AppBundle:Comments as co WITH co.articleId = ar.id
+            WHERE ar.id = a.id GROUP BY ar.id) as friends_count')
             ->from(Articles::class, 'a')
             ->innerJoin(Comments::class, 'c', 'WITH', 'c.articleId = a.id')
             ->innerJoin(Users::class, 'u', 'WITH', 'c.userId = u.id')
