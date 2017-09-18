@@ -22,7 +22,6 @@ class ArticlesController extends FOSRestController
     public function getArticlesAction()
     {
         $data = $this->get('app.article_service')->getAllArticlesWithDetail();
-        $viewHandler = $this->get('fos_rest.view_handler');
         $view = View::create($data);
         $view->setFormat('json');
         $view->setStatusCode(200);
