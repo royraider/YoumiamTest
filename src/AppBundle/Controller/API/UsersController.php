@@ -9,6 +9,7 @@
 namespace AppBundle\Controller\API;
 
 
+use AppBundle\Entity\Comments;
 use AppBundle\Entity\Users;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\FOSRestController;
@@ -33,7 +34,19 @@ class UsersController extends FOSRestController
      */
     public function getUserV2($id)
     {
-
+        $user = $this->getDoctrine()->getRepository(Users::class)->find($id);
+        $queryBuilder = $this->getDoctrine()->getEntityManager()->createQueryBuilder();
+        $queryBuilder->select('c.id')
+            ->addSelect('c.comment')
+            ->from(Comments::class, 'c')
+            ->where('c.userId = :id')
+            ->setParameter('id', $id);
+        $comments = $queryBuilder->getQuery()->getArrayResult();
+        $data = [$user->getName(), $comments];
+        $view = View::create($data);
+        $view->setFormat('json');
+        $view->setStatusCode(200);
+        return $this->handleView($view);
     }
 
     /**
