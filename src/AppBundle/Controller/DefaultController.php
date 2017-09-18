@@ -27,6 +27,7 @@ class DefaultController extends Controller
     }
 
     /**
+     * Link service with twig
      * @Route("/", name="homepage")
      */
     public function indexAction()
