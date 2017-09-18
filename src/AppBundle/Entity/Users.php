@@ -42,5 +42,9 @@ class Users
      */
     private $tel;
 
+    public function getName()
+    {
+        return $this->name;
+    }
 
 }

@@ -5,3 +5,7 @@ app:
 articles:
     type: rest
     resource: AppBundle\Controller\API\ArticlesController
+
+users:
+    type: rest
+    resource: AppBundle\Controller\API\UsersController
