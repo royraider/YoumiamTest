@@ -45,4 +45,15 @@ class DefaultController extends Controller
     {
 
     }
+
+    /**
+     * Tried to load the trad.yml using the translator option in the config.yml
+     * file.
+     * I red the documentation on http://symfony.com/doc/2.7/translation.html but I could not
+     * make it work.
+     * I tried to rename the file trad.fr.yml (or trad.en.yml) as it is recommended to do but still
+     * it did not work.
+     * I tried to put the file in app/Resources/traduction as advised, but still it did not work either.
+     * I stuck on this for quite some time now.
+     */
 }
