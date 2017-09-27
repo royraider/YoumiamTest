@@ -19,9 +19,9 @@ Good luck and Have fun ! :)
 1. Retourner la variable count égale au nombre de follower de l'id appeler dans le controller profileAction
 2. Faire un service qui récupère l'ensemble des articles avec pour chacun: 
    1. les 3 derniers commentaires
-   2. le nom du dernier ami ayant commenté chaque article
-   3. le nombre d'autres amis l'ayant commenté
-3. faire le twig qui affiche la liste d'articles à la suite, avec les 3 commentaires, l'ami et le nombre d'amis ayant commenté (MrX, MrX & 1 autre ami, MrX & X autres amis) [Aucune importance accordé au rendu visuel]
+   2. le nom du dernier ami de l'auteur ayant commenté chaque article
+   3. le nombre d'autres amis de l'auteur l'ayant commenté
+3. faire le twig qui affiche la liste d'articles à la suite, avec les 3 commentaires, l'ami et le nombre d'amis de l'auteur ayant commenté (MrX, MrX & 1 autre ami, MrX & X autres amis) [Aucune importance accordé au rendu visuel]
 4. faire un call API GET articles
 5. relier le service (3.2) au twig (3.3) & au call API (3.4)
 ## Entity & API
