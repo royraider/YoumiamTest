@@ -29,7 +29,7 @@ Good luck and Have fun ! :)
    1. en V1: Username
    2. en V2: Username, array commentaires {id,text}
    3. en V3: Username, array commentaires {id}
-4. en V4: Username, array commentaires {id,text} (text without tag)
-   1. `<@a:id:a@>` converti en en nom de l'article
+   4. en V4: Username, array commentaires {id,text} (text without tag)
+      1. `<@a:id:a@>` converti en en nom de l'article
 ## Colle
 1. Mettre en place une solution pour récupérer de manière automatique les traduction du fichier trad.yml (elles sont correctes) ou de tout autres fichier yml de ce type et qu'elles soient correctement interprété par symfony2.
